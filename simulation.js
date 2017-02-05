@@ -10,7 +10,7 @@ function getAverages() {
 
   for (let j = 0; j < 64; j++) {
     const players = [];
-    for (let i = 0; i < 64 * 64 * 16; i++) {
+    for (let i = 0; i < 64 * 64 * 1; i++) {
       players.push(createRandomPlayer());
     }
     winners.push(tournament(players, castleGame));
@@ -26,22 +26,22 @@ function getAverages() {
   return sums;
 }
 
-console.log(getAverages());
 
-GetAvegAvg();
-{
+function GetAvgAvg() {
   const averageArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-  const Interations = 5;
-  for (let i = 0; i < Interations + 1; i++) {
-    const NewAverage = getAverages;
+  const Iterations = 100;
+  for (let i = 0; i < Iterations; i++) {
+    const NewAverage = getAverages();
     for (let j = 0; j < 10; j++) {
       averageArray[j] += NewAverage[j];
     }
   }
   for (let i = 0; i < 10; i++) {
-    averageArray[i] /= 64;
+    averageArray[i] /= Iterations;
   }
+  return averageArray;
 }
 
+console.log(GetAvgAvg().map(a => Math.round(a)));
 
 // console.log(tournament(winners, castleGame));
