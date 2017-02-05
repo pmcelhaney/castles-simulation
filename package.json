@@ -1,0 +1,14 @@
+{
+  "name": "castles",
+  "version": "1.0.0",
+  "description": "simulation of 538 castles game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Patrick McElhaney",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.2.0"
+  }
+}
