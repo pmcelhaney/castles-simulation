@@ -71,7 +71,7 @@ const scores2 = {
   random: 0,
 };
 
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 100000; i++) {
   let winner = castleGame(createRandomPlayerTweaked(), createRandomPlayerBiased());
   scores2[winner.name]++;
   winner = castleGame(createRandomPlayerTweaked(), createRandomPlayer());
