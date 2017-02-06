@@ -1,0 +1,16 @@
+module.exports = function createRandomPlayerBiased() {
+  const RandSoldiers = [];
+  let MaxSoldiers = 100;
+  for (let i = 0; i < 9; i++) {
+    const x = Math.floor(Math.random() * MaxSoldiers);
+    RandSoldiers.unshift(x);
+    MaxSoldiers -= x;
+  }
+
+  RandSoldiers.push(MaxSoldiers);
+
+  return {
+    name: 'biased',
+    soldiers: RandSoldiers,
+  };
+};

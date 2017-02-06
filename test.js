@@ -2,6 +2,8 @@
 
 const expect = require('chai').expect;
 const createRandomPlayer = require('./createRandomPlayer');
+const createRandomPlayerBiased = require('./createRandomPlayerBiased');
+const createRandomPlayerTweaked = require('./createRandomPlayerTweaked');
 const highRollerGame = require('./highRollerGame');
 const validate = require('./validate');
 const castleGame = require('./castleGame');
@@ -116,5 +118,24 @@ describe('random player generator', () => {
 
     console.log(createRandomPlayer());
     expect(validateRandomPlayer).not.to.throw();
+  });
+
+  it('creates a valid player (biased)', () => {
+    function validateRandomPlayerBiased() {
+      validate(createRandomPlayerBiased());
+    }
+
+    console.log(createRandomPlayerBiased());
+    expect(validateRandomPlayerBiased).not.to.throw();
+  });
+
+
+  it('creates a valid player (tweaked)', () => {
+    function validateRandomPlayerTweaked() {
+      validate(createRandomPlayerTweaked());
+    }
+
+    console.log(createRandomPlayerTweaked());
+    expect(validateRandomPlayerTweaked).not.to.throw();
   });
 });
